@@ -1,0 +1,51 @@
+---
+File: devops-config
+Version: 1.0
+BasicVars:
+   build_type: python
+   package_type: zip
+   artifact_version: 18.1
+   aws_region: us-east-1
+   aws_vpc_id: 752686809366
+   finished_goods_repo: s3://gehc-artifacts/healthcloud/idam-db-update
+   additional_finished_goods_repo: 
+   aws_upload_files: 
+   repo_url: https://github.build.ge.com/healthcloud/idam-db-update-lambda.git
+   custom_post_commands: pip install -r requirements.txt -t .; zip -r9 idam-db-update-lambda.zip *
+   artifact_matcher: 
+DockerVars:
+   docker_additional_args: 
+   docker_additional_repo: 
+   dockerfile_location: 
+   docker_tag_latest: false
+MvnVars:
+   mvn_additional_args: 
+   mvn_deploy: false
+   mvn_deploy_additional_args: 
+NpmVars:
+   node_version: 4.4.7
+   run_npm_validate: false
+LambdaVars:
+   aws_dev_lambda_name: 
+KpiVars:
+   kpi_build_status_id: 4
+   kpi_elapsed_time_id: 9
+SonarVars:
+   aws_run_sonar: false
+   sonar_additional_args: 
+TestingVars:
+   test_component_command: 
+   test_contract_command: 
+   test_unit_command:
+   test_integration_command: 
+DevEnvVars:
+   aws_dev_cluster_name: 
+   aws_dev_service_name: 
+   aws_dev_task_definition: 
+DeployVars:
+   update_lambda: false
+   update_integration: false
+   update_production: false
+   aws_update_task_and_service: false
+   aws_update_task_only: false
+   aws_update_service_only: false
